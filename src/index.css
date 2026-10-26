@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { font-family: 'Cairo', sans-serif; }
+  html { scroll-behavior: smooth; direction: rtl; }
+  body { @apply bg-slate-50 text-navy-900; direction: rtl; }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-slate-100; }
+  ::-webkit-scrollbar-thumb { @apply bg-navy-400 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-navy-600; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-navy-800 text-white px-6 py-2.5 rounded-xl font-semibold
+           hover:bg-navy-700 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg;
+  }
+  .btn-secondary {
+    @apply bg-white text-navy-800 px-6 py-2.5 rounded-xl font-semibold
+           border-2 border-navy-200 hover:border-navy-400 hover:bg-navy-50
+           active:scale-95 transition-all duration-200;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white px-6 py-2.5 rounded-xl font-semibold
+           hover:bg-red-700 active:scale-95 transition-all duration-200;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-slate-100
+           hover:shadow-md transition-shadow duration-200;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl border border-slate-200
+           focus:outline-none focus:ring-2 focus:ring-navy-400 focus:border-transparent
+           bg-white text-navy-900 placeholder-slate-400 transition-all duration-200;
+  }
+  .section-title { @apply text-2xl md:text-3xl font-bold text-navy-800 mb-2; }
+  .section-subtitle { @apply text-slate-500 font-medium; }
+  .table-header { @apply bg-navy-800 text-white text-sm font-semibold px-4 py-3 text-right; }
+  .table-cell { @apply px-4 py-3 text-sm text-navy-800 border-b border-slate-100; }
+  .badge { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold; }
+}
+
+/* Modal animations */
+.modal-overlay { animation: fadeIn 0.2s ease-out; }
+.modal-content  { animation: slideUp 0.25s ease-out; }
+
+@keyframes fadeIn  { from { opacity:0 } to { opacity:1 } }
+@keyframes slideUp { from { opacity:0; transform:translateY(30px) scale(0.97) } to { opacity:1; transform:translateY(0) scale(1) } }
+
+/* Spinner */
+.spinner {
+  border: 3px solid rgba(23,47,121,0.1);
+  border-top-color: #172f79;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg) } }
