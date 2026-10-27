@@ -1,11 +1,15 @@
 // =====================================================
 // Supabase configuration
-// انسخ القيم من Project Settings > API داخل Supabase
+// اقرأ القيم من ملف .env ضمن المشروع
 // =====================================================
 import { createClient } from '@supabase/supabase-js'
 
-const supabaseUrl = 'https://yecoazjindxbwtiqjkac.supabase.co'
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InllY29hemppbmR4Ynd0aXFqa2FjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMwMzMyMTksImV4cCI6MjEwODYwOTIxOX0.zZBkzrOf3Ubano3wTUU1ISvl0Skekfs24NauGBpC3-c'
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.warn('Supabase env vars are missing. Add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to your .env file.')
+}
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 export default supabase
