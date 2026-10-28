@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Header from '../components/layout/Header'
-import Footer from '../components/layout/Footer'
+import Footer from '../components/layout/footer'
 import AuthModal from '../components/auth/AuthModal'
 import StudentTable from '../components/grade/StudentTable'
 import AddStudentModal from '../components/grade/AddStudentModal'

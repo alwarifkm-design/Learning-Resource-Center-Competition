@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/layout/Header'
-import Footer from '../components/layout/Footer'
+import Footer from '../components/layout/footer'
 import AdminUsers    from '../components/admin/AdminUsers'
 import AdminSections from '../components/admin/AdminSections'
 import AdminSecurity from '../components/admin/AdminSecurity'

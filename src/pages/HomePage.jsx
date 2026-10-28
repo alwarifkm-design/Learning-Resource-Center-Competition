@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Header from '../components/layout/Header'
-import Footer from '../components/layout/Footer'
+import Footer from '../components/layout/footer'
 import HeroSection from '../components/home/HeroSection'
 import FAQSection from '../components/home/FAQSection'
 import AboutSection from '../components/home/AboutSection'

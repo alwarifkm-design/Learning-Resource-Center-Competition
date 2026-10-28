@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Header from '../components/layout/Header'
-import Footer from '../components/layout/Footer'
+import Footer from '../components/layout/footer'
 import AuthModal from '../components/auth/AuthModal'
 import GradeCard from '../components/stats/GradeCard'
 import StatsChart from '../components/stats/StatsChart'
