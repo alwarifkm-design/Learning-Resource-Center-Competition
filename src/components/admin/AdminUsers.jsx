@@ -46,7 +46,7 @@ export default function AdminUsers() {
       await deleteUser(deleteTarget.id)
       await addLog('delete_user', `حذف حساب: ${deleteTarget.username}`, me?.username)
       toast('تم حذف الحساب','success'); setDeleteTarget(null); loadUsers()
-    } catch { toast('فشل الحذف','error') }
+    } catch (error) { toast(error.message || 'فشل الحذف','error') }
   }
 
   if (loading) return <div className="flex justify-center py-16"><Spinner size="lg" /></div>
